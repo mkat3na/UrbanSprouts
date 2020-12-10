@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--
+     Name: Michaela Chua
+     Filename: index_plants.html   
+    -->
+
+    <meta charset="utf-8" />
+    <link href="styles.css" rel="stylesheet" />
+    <link href="ss_insert.css" rel="stylesheet" />
+    <script type="text/javascript" src="./script.js"> </script>
+    <title>Urban Sprouts</title>
+
+</head>
+
+<body>
+    <header>
+        <nav id="navbar">
+            <div class="container">
+                <h1 class="logo"><a href="index.html">Urban Sprouts</a></h1>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a class="current" href="index_plants.html">Plant</a></li>
+                    <li><a href="index_about.html">About</a></li>
+                    <li><a href="index_contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="plant-container">
+            <section id="plant_info" class="bg-dark">
+                <div class="info-img1"></div>
+                <div class="info-content">
+                    <h2><span class="text-primary">Monstera </span> Plant</h2>
+                    <p class="pragraph" id="pragraph">
+                        A great plant for all types of rooms, this plant has large green leaves that
+                        are unique in giving the plant character. Also commonly known as the
+                        Swiss cheese plant or split-leaf, this houseplant has a dense and bushy
+                        shape with a tropical look.</p>
+                    <a class="btn btn-light" onclick="myFunctionPar1()">$19.99</a>
+
+                </div>
+            </section>
+            <section id="home_info" class="bg-dark">
+
+                <div class="info-content" id="pragraphDIV">
+                    <h2><span class="text-primary">Crystal </span> Plants</h2>
+                    <p class="pragraph2">
+                        Many plants have specialized cells, called crystal idioblasts, that contain single or multiple
+                        needle-like crystals that appear to serve a primary function in bulk regulation of calcium in
+                        tissues and a secondary function in defense against grazing animals.
+                    </p>
+                    <p>
+                    </p>
+                    <a class="btn btn-light" onclick="myFunctionpar2()">$29.99</a>
+                </div>
+                <div class="info-img2"></div>
+
+            </section>
+            <div id="x"></div>
+            <p id="GFG_DOWN" style="color:green; font-size: 20px; font-weight: bold;">
+            </p>
+        </div>
+        <footer id="main-footer">
+            <a class="btn btn-light" onclick="myFunction()"> Load more</a>
+            <p>Urban Sprouts &copy; 2020, All Rights Reserved</p>
+        </footer>
+</body>
+</html>
+
+<script>
+    //Requirement #3
+    window.onload = function () {
+        var src = document.getElementById("x");
+        var down = document.getElementById('GFG_DOWN');
+        var x = document.createElement("IMG");
+        x.setAttribute("src", "./img/loadmore" + 3 + ".png");
+        x.setAttribute("width", "60%");
+        x.setAttribute("height", "60%");
+        x.setAttribute("alt", "loadmore");
+        x.setAttribute('id', "loadmore");
+        src.appendChild(x);
+        down.innerHTML = "Single images loaded...";
+        document.getElementById('pragraphDIV').className = 'loadmore';
+    }
+    document.getElementsByClassName('btn').style = "loadmore";
+
+</script>

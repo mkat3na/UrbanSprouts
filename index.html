@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--
+     Name: Michaela Chua
+     Filename: index.html   
+    -->
+
+    <meta charset="utf-8" />
+    <link href="styles.css" rel="stylesheet" />
+    <link href="ss_insert.css" rel="stylesheet" />
+    <script type="text/javascript" src="./script.js"> </script>
+    <title>Urban Sprouts</title>
+
+</head>
+
+<body>
+    <header>
+        <nav id="navbar">
+            <div class="container">
+                <h1 class="logo"><a href="index.html">Urban Sprouts</a></h1>
+                <ul>
+                    <li><a class="current" href="index.html">Home</a></li>
+                    <li><a href="index_plants.html">Plants</a></li>
+					<li><a href="index_about.html">About</a></li>
+					<li><a href="index_contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+		<h1><span  class="text-primary">All Great Offers </span> will expire in :<p id="timer"></p></h1>
+        <div id="showcase" class="zoom">
+            <div class="container">
+                <div class="showcase-content" margin-top="500px">
+                    <h1 class="text-primary"><span >PLANTS </span> YOU'LL LOVE</h1>
+           
+                </div>
+            </div>
+        </div>
+    </header>
+    <section id="home_info" class="bg-dark">
+        <div class="info-img"></div>
+        <div class="info-content">
+            <h2><span class="text-primary">It's lovely </span> to meet you!</h2>
+            <p id="changecolor" onmouseenter="stext()">
+                Urban Sprouts is a 2,000 square foot boutique house plant shop and resource hub nestled in the heart of downtown Renton Wa! We are a small passionate crew on a mission to help people on their plant care journeys from start to finish! whether you're looking for you very first houseplant, you've struggled with plant care in the past, or you're a seasoned collector, we're here for you every step of the way!
+            </p>
+            <a href="index_about.html" class="btn btn-light">Read More</a>
+        </div>
+    </section>
+    <section id="features">
+        <div class="box bg-light">
+            <i class="fas fa-spa fa-3x" onclick="blueRule()"></i>
+            <h3>Tropicals</h3>
+            <p> Get the great Tropicals!!!</p>
+        </div>
+        <div class="box bg-primary">
+            <i class="fas fa-eye-dropper fa-3x" onclick="blueRule()"></i>
+            <h3>Plant Fertilizer</h3>
+            <p>Now you can get Plant Fertilizer here!!!</p>
+        </div>
+        <div class="box">
+            <i class="fas fa-bug fa-3x" onclick="blueRule()"></i>
+            <h3>Bacterial Fertilizer</h3>
+            <p>Now you can get Bacterial Fertilizer here!!!</p>
+        </div>
+    </section>
+    <div class="clr"></div>
+    <footer id="main-footer">
+        <p>Urban Sprouts &copy; 2020, All Rights Reserved</p>
+    </footer>
+</body>
+</html>
+<script>
+
+/*Requirement 7 & 8*/    
+var countDownDate = new Date("Dec 11, 2020 15:37:25").getTime();
+
+var x = setInterval(function() {
+	var now = new Date().getTime();
+	var distance = countDownDate - now;
+	var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+	var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+	var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+	var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+	document.getElementById("timer").innerHTML = days + "d " + hours + "h "+ minutes + "m " + seconds + "s ";
+	if (distance < 0) {
+		clearInterval(x);
+		document.getElementById("timer").innerHTML = "EXPIRED"; //Requirement #4
+	}
+}, 1000);
+
+function stext() {
+    var x = document.getElementById("changecolor");
+    x.style.color = 'green';
+}
+var stylesheet = document.styleSheets[0];
+var ruleIndex = 0;
+function blueRule(){
+  stylesheet.cssRules[ruleIndex].style.color = "blue";
+}
+</script>
+
